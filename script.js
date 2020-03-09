@@ -56,6 +56,11 @@ const fetchData = (url) => {
   fetch(url)
     .then((response) => {
       return response.json();
+
+      if (response.json() === 0) {
+        alert('try another keyword')
+      }
+
     })
     // HANDLES RETURNED DATA
     .then((data) => {
