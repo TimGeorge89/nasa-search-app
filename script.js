@@ -12,6 +12,7 @@ const modalContent = document.querySelector('.modal-content')
 const modalButtons = document.querySelectorAll('.modal-buttons span')
 const modalClose = document.querySelector('.modal-close')
 const body = document.querySelector('body')
+const error = document.querySelector('.error-message')
 // APP STATE
 let modalResult = {}
 let resultsJSON = []
@@ -56,14 +57,17 @@ const fetchData = (url) => {
   fetch(url)
     .then((response) => {
       return response.json();
-
-      if (response.json() === 0) {
-        alert('try another keyword')
-      }
-
     })
     // HANDLES RETURNED DATA
     .then((data) => {
+
+      if (!data.collection || data.collection.items.length < 1) {
+        error.classList.add('show-error')
+        return setTimeout(() => {
+          error.classList.remove('show-error')
+        }, 5000)
+      }
+
       resultsJSON = data.collection.items.filter(x => x.links && x.data)
       resultsJSON.forEach(item => {
         //LIMIT DESCRIPTION TO 100 CHARACTERS
@@ -109,6 +113,10 @@ const fetchData = (url) => {
         btn.setAttribute('data-link', link.href)
       })
     });
+}
+
+if (fetchData === 0) {
+  console.log('no data');
 }
 
 document.querySelector('.prev').addEventListener('click', event => {
