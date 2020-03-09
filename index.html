@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- MY API KEY   c7WoIAkjYmlFKQbUeYYKY4Ksb17ZlDufBszJA4Te -->
+  <!-- You can start using this key to make web service requests. Simply pass your key in the URL when making a web request. Here's an example: -->
+  <!-- https://api.nasa.gov/planetary/apod?api_key=c7WoIAkjYmlFKQbUeYYKY4Ksb17ZlDufBszJA4Te -->
+
+  <!-- MAIN NAV -->
+  <div class="nav-container">
+    <div class="search-bar-header">
+      <div class="header-title">
+        <h1>NASA</h1>
+        <h2>Image Database</h2>
+      </div>
+      <div class="search-bar">
+        <input class="input" type="text" placeholder="Kepler-69c">
+        <button class="button search-button">Explore!</button>
+      </div>
+      <!-- PAGINATION -->
+      <div class="pagination top">
+        <div class="prev top">Prev</div>
+        <div class="next top">Next</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN IMAGES -->
+  <div class="results">
+    <!-- populated in script.js -->
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal">
+    <div class="modal-wrapper">
+      <a class="modal-close">close</a>
+      <div class="modal-buttons">
+        <span class="back"><</span>
+        <span class="forward">></span>
+      </div>
+      <div class="modal-content">
+        <!-- populated in script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGINATION -->
+  <!-- <div class="pagination">
+    <div class="prev">Prev</div>
+    <div class="next">Next</div>
+  </div> -->
+  <!-- FOOTER -->
+  <script src="script.js"></script>
+</body>
+
+</html>
